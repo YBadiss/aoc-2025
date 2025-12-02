@@ -17,7 +17,7 @@ class DayModule:
     
     def run(self) -> str:
         lines = self._get_lines('data')
-        data = [self._parser(line) for line in lines[:-1]]
+        data = [self._parser(line) for line in lines]
         result = str(self._solver(data))
         return result
     
@@ -45,4 +45,5 @@ class DayModule:
 
     def _get_lines(self, data_file: str) -> list[str]:
         with open(f'{self._folder_path}/{data_file}', 'r') as f:
-            return f.read().splitlines()
+            lines = f.read().splitlines()
+            return lines
