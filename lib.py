@@ -10,6 +10,8 @@ class DayModule:
     def test(self) -> str:
         data = self._get_data(f'{self._day_part}.data.test')
         data, expected_result = [self._parser(d) for d in data[:-1]], data[-1]
+        # remove None from data
+        data = [d for d in data if data is not None]
         actual_result = str(self._solver(data))
         if actual_result != expected_result:
             raise ValueError(f'Expected {expected_result} but got {actual_result}')
@@ -18,6 +20,8 @@ class DayModule:
     def run(self) -> str:
         data = self._get_data('data')
         data = [self._parser(d) for d in data]
+        # remove None from data
+        data = [d for d in data if data is not None]
         result = str(self._solver(data))
         return result
     
