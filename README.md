@@ -2,6 +2,8 @@
 
 https://adventofcode.com/2025
 
+![Final AoC tree](./aoc.gif)
+
 ## Getting started
 
 ```bash
